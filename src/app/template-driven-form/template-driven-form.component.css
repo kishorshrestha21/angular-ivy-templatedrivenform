@@ -1,0 +1,57 @@
+.formWrap {
+  width: 50%;
+  box-shadow: 1px 10px 10px 1px rgba(51, 51, 51, 0.445);
+  box-sizing: border-box;
+  border-radius: 5px;
+
+}
+
+.formHead{
+  background-color: rgba(83, 28, 119, 0.952);
+ text-align: center;
+ color:azure;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.404);
+}
+h3
+{
+  padding: 10px;
+}
+
+.formGroup {
+ padding:  10px 45px 45px ;
+}
+label {
+  width: 100%;
+  color: rgb(6, 94, 94);
+}
+
+input, select {
+  width: 100%;
+  border: 1px solid rgba(51, 51, 51, 0.425);
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.formGroup{
+  margin-bottom: -40px;
+}
+
+.btnCalss{
+  padding:20px 45px 45px;
+}
+
+button{
+  background-color: rgb(80, 170, 80);
+  color:azure;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+   box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.404);
+   cursor: pointer;
+}
+
+input.ng-invalid.ng-touch{
+  border:1px solid red
+}

@@ -10,9 +10,16 @@ export class TemplateDrivenFormComponent implements OnInit {
   constructor() {}
 
 @ViewChild('myForm') myForm:NgForm;
-  ngOnInit() {}
+
+defualtStylist='Tom';
+// username='';
+  ngOnInit() {
+
+  }
 
   onSubmit(form:NgForm) {
     console.log(this.myForm);
+
   }
+
 }

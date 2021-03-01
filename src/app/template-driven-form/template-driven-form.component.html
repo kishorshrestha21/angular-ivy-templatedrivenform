@@ -1,0 +1,68 @@
+
+<div class="formWrap">
+  <div class="formHead">
+    <h3>User Detail</h3>
+  </div> 
+  <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+    <!-- <div class="formGroup">
+      <label for="">username</label>
+      <input type="text" placeholder="Name" class="formControl"
+      name="username" ngModel required
+      #name='ngModel'>
+      <small class="danger-color"
+      *ngIf ="name.touched && !name.valid">Please enter the Username</small> 
+
+      
+    </div> -->
+
+     <div class="formGroup">
+      <label for="">Email</label>
+      <input type="email" placeholder="Email"
+      name="email" ngModel required email
+      #email="ngModel">
+    <small class="danger-color"
+      *ngIf ="email.touched && !email.valid && !email.dirty">Please enter the Eamil</small> 
+      <small class="danger-color"
+      *ngIf ="email.dirty && !email.valid">Please enter valid email</small>
+    </div>
+
+    <div class="formGroup">
+      <label for="">Phone</label>
+      <input type="" placeholder="phone no">
+    </div>
+    
+    <div class="formGroup">
+      <label for="">Stylist List</label>
+      <select name="stylist" id="" 
+      [ngModel] ="defualtStylist">
+        <option value="">Select Stylist</option>
+        <option value="Tom">Tom</option>
+        <option value="Ema">Ema</option>
+      </select>
+    </div>
+
+    <div class="formGroup">
+      <label for="">Date</label>
+      <input type="date">
+    </div>
+
+    <div class="formGroup">
+      <label for="">Time</label>
+      <input type="time">
+    </div>
+     <div class="formGroup">
+       <input list="brow">
+        <datalist id="brow">
+          <option value="Internet Explorer">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist>  
+     </div>
+    <div class="btnCalss" >
+      <button type="submit" [disabled]= "myForm.invalid">Submit</button>
+    </div>
+
+  </form>
+</div>

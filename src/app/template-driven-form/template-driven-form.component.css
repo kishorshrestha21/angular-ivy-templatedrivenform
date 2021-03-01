@@ -52,6 +52,17 @@ button{
    cursor: pointer;
 }
 
-input.ng-invalid.ng-touch{
-  border:1px solid red
+button:disabled{
+background-color: rgba(80, 170, 80, 0.425);
+  
+}
+
+input.ng-invalid.ng-touched{
+  border:1px solid red;
+  box-shadow: inset 1px 1px 10px 0px rgba(255, 0, 0, 0.479);
+
+}
+
+.danger-color{
+  color:red;
 }

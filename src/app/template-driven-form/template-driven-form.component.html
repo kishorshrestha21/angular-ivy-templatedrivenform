@@ -1,39 +1,40 @@
 
+<div class="formContainer">
 <div class="formWrap">
   <div class="formHead">
     <h3>User Detail</h3>
   </div> 
   <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
-    <!-- <div class="formGroup">
+    <div class="formGroup">
       <label for="">username</label>
       <input type="text" placeholder="Name" class="formControl"
-      name="username" ngModel required
+      name="username" [(ngModel)]="username" required
       #name='ngModel'>
       <small class="danger-color"
       *ngIf ="name.touched && !name.valid">Please enter the Username</small> 
 
-      
-    </div> -->
+      <small *ngIf="username">Your username is {{username}}</small>
+    </div>
 
      <div class="formGroup">
       <label for="">Email</label>
-      <input type="email" placeholder="Email"
+      <input type="email" placeholder="Email" class="formControl"
       name="email" ngModel required email
       #email="ngModel">
     <small class="danger-color"
-      *ngIf ="email.touched && !email.valid && !email.dirty">Please enter the Eamil</small> 
+      *ngIf ="email.touched && !email.valid">Please enter the Eamil</small> 
       <small class="danger-color"
       *ngIf ="email.dirty && !email.valid">Please enter valid email</small>
     </div>
 
     <div class="formGroup">
       <label for="">Phone</label>
-      <input type="" placeholder="phone no">
+      <input type="" placeholder="phone no" class="formControl">
     </div>
     
     <div class="formGroup">
       <label for="">Stylist List</label>
-      <select name="stylist" id="" 
+      <select name="stylist" id="" class="formControl"
       [ngModel] ="defualtStylist">
         <option value="">Select Stylist</option>
         <option value="Tom">Tom</option>
@@ -41,17 +42,25 @@
       </select>
     </div>
 
-    <div class="formGroup">
+    <div class="formGroup" *ngFor="let gender of genders">
+      <label for="{{gender.id}}">{{gender.value}}</label>
+
+        <input type="radio" id="{{gender.id}}" value ="{{gender.value}}"
+        name="gender" [ngModel] ="defaultGender">
+
+    </div>
+
+    <div class="formGroup" >
       <label for="">Date</label>
-      <input type="date">
+      <input type="date" class="formControl">
     </div>
 
     <div class="formGroup">
       <label for="">Time</label>
-      <input type="time">
+      <input type="time" class="formControl">
     </div>
      <div class="formGroup">
-       <input list="brow">
+       <input list="brow" class="formControl">
         <datalist id="brow">
           <option value="Internet Explorer">
           <option value="Firefox">
@@ -60,9 +69,25 @@
           <option value="Safari">
         </datalist>  
      </div>
-    <div class="btnCalss" >
+    <div class="btnClass" >
       <button type="submit" [disabled]= "myForm.invalid">Submit</button>
     </div>
 
+  <div class="btnClass" >
+    <button type="button" (click)="onSetValue()">Set Value</button>
+  </div>
+
+  <div class="btnClass">
+    <button type="button" (click)="onpatchValue()">Patch Value</button>
+  </div>
   </form>
+</div>
+
+<div class="formWrap" *ngIf="submited">
+   <h2>Form Data</h2>
+            <p>Username: <strong>{{formData.username}}</strong></p>
+            <p>Email: <strong>{{formData.email}}</strong></p>
+            <p>Course:<strong>{{formData.course}}</strong></p>
+            <p>Gender: <strong>{{formData.gender}}</strong></p>
+</div>
 </div>
